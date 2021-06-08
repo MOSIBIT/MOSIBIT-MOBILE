@@ -45,18 +45,4 @@
         app:layout_constraintTop_toBottomOf="@+id/preview_display_layout"
         tools:text="@string/alphabet_A" />
 
-    <!--    <FrameLayout-->
-<!--        android:layout_width="fill_parent"-->
-<!--        android:layout_height="104dp"-->
-<!--        android:layout_weight="1"-->
-<!--        android:background="@drawable/your_rounded_shape"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.0"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/preview_display_layout">-->
-
-
-
-<!--    </FrameLayout>-->
-
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,7 +11,7 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class TranslateViewModel : ViewModel() {
-    val testing = MutableLiveData<ItemResponse>()
+    val responseAlphabet = MutableLiveData<ItemResponse>()
     fun post(data: Data) {
         val config = Config.create().cordinate(data)
         config.enqueue(
@@ -21,7 +21,7 @@ class TranslateViewModel : ViewModel() {
                     response: Response<ItemResponse>
                 ) {
                     if (response.isSuccessful){
-                        testing.value = response.body()
+                        responseAlphabet.value = response.body()
                         Log.d("PREDICTION", response.body()?.alphabet.toString())
                     }
                 }
@@ -29,7 +29,6 @@ class TranslateViewModel : ViewModel() {
                 override fun onFailure(call: Call<ItemResponse>, t: Throwable) {
                    Log.d("TESTING", t.message.toString())
                 }
-
             }
         )
     }

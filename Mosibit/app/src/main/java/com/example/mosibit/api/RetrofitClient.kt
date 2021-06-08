@@ -9,7 +9,7 @@ import retrofit2.http.POST
 
 @JvmSuppressWildcards
 interface RetrofitClient {
-
+    //end-point
     @POST("predict")
     fun cordinate(
         @Body data: Data

@@ -46,7 +46,7 @@ class TranslateFragment : Fragment() {
         private const val OUTPUT_LANDMARKS_STREAM_NAME = "hand_landmarks"
         private const val INPUT_NUM_HANDS_SIDE_PACKET_NAME = "num_hands"
         private const val NUM_HANDS = 2
-        private val CAMERA_FACING = CameraFacing.BACK
+        private val CAMERA_FACING = CameraFacing.FRONT
         private const val FLIP_FRAMES_VERTICALLY = true
 
         init {
@@ -244,18 +244,14 @@ class TranslateFragment : Fragment() {
     }
 
     private fun onPreviewDisplaySurfaceChanged(width: Int, height: Int) {
-        // (Re-)Compute the ideal size of the camera-preview display (the area that the
-        // camera-preview frames get rendered onto, potentially with scaling and rotation)
-        // based on the size of the SurfaceView that contains the display.
+        // (Re-)Compute the ideal size of the camera-preview display (the area that the camera-preview frames get rendered onto, potentially with scaling and rotation) based on the size of the SurfaceView that contains the display.
         val viewSize = computeViewSize(width, height)
         val displaySize = cameraHelper!!.computeDisplaySizeFromViewSize(viewSize)
         val isCameraRotated = cameraHelper!!.isCameraRotated
         heightRatio = displaySize.height.toDouble()
         widthRatio = displaySize.width.toDouble()
 
-        // Connect the converter to the camera-preview frames as its input (via
-        // previewFrameTexture), and configure the output width and height as the computed
-        // display size.
+        // Connect the converter to the camera-preview frames as its input (via previewFrameTexture), and configure the output width and height as the computed display size.
         converter!!.setSurfaceTextureAndAttachToGLContext(
             previewFrameTexture,
             if (isCameraRotated) displaySize.height else displaySize.width,
@@ -490,16 +486,6 @@ class TranslateFragment : Fragment() {
             listPinkyDipY.add(pinkyDipY * heightRatio)
             listPinkyTipX.add(pinkyTipX * widthRatio)
             listPinkyTipY.add(pinkyTipY * heightRatio)
-//            listThumbsX.add(thumb_X * width_ratio)
-//            listThumbsY.add(thumb_y * height_ratio)
-//            listIndexX.add(index_X * width_ratio)
-//            listIndexY.add(index_y * height_ratio)
-//            listMiddleX.add(middle_X * width_ratio)
-//            listMiddleY.add(middle_y * height_ratio)
-//            listRingX.add(ring_X * width_ratio)
-//            listRingY.add(ring_y * height_ratio)
-//            listPinkyX.add(pinky_X * width_ratio)
-//            listPinkyY.add(pinky_Y * height_ratio)
             //Initialize data
             data = Data(handData)
             //set prediction with data
@@ -573,7 +559,7 @@ class TranslateFragment : Fragment() {
             ringFingerDipY = multiHandLandmarks[0].getLandmark(15).y.toDouble()
             ringFingerTipX = multiHandLandmarks[0].getLandmark(16).x.toDouble()
             ringFingerTipY = multiHandLandmarks[0].getLandmark(16).y.toDouble()
-            
+
             pinkyMcpX = multiHandLandmarks[0].getLandmark(17).x.toDouble()
             pinkyMcpY = multiHandLandmarks[0].getLandmark(17).y.toDouble()
             pinkyPipX = multiHandLandmarks[0].getLandmark(18).x.toDouble()
@@ -582,7 +568,6 @@ class TranslateFragment : Fragment() {
             pinkyDipY = multiHandLandmarks[0].getLandmark(19).y.toDouble()
             pinkyTipX = multiHandLandmarks[0].getLandmark(20).x.toDouble()
             pinkyTipY = multiHandLandmarks[0].getLandmark(20).y.toDouble()
-            println("domba $pinkyTipX dan $pinkyTipY")
 
             ++handIndex
         }
@@ -590,7 +575,7 @@ class TranslateFragment : Fragment() {
     }
 
     private fun getPrediction() {
-        translateViewModel.testing.observe(viewLifecycleOwner, {
+        translateViewModel.responseAlphabet.observe(viewLifecycleOwner, {
             _binding?.textView?.text = it.alphabet
         })
     }

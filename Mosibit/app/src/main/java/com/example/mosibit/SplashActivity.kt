@@ -13,7 +13,7 @@ class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySplashBinding.inflate(layoutInflater)
-        supportActionBar?.hide()
+        supportActionBar?.hide()//hide action bar
         setContentView(binding.root)
 
         val top = AnimationUtils.loadAnimation(this, R.anim.top_animation)

@@ -1,17 +1,20 @@
 package com.example.mosibit.ui.home
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mosibit.adapter.SibiAdapter
 import com.example.mosibit.data.Sibi
 import com.example.mosibit.databinding.FragmentHomeBinding
+import com.example.mosibit.ui.BugReportActivity
 import com.example.mosibit.utils.SibiData
+
 
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
@@ -30,6 +33,11 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        _binding?.fabBugReport?.setOnClickListener{
+            val intent = Intent(activity, BugReportActivity::class.java)
+            startActivity(intent)
+        }
 
         list.addAll(SibiData.listData)
         sibiAdapter = SibiAdapter(list)
