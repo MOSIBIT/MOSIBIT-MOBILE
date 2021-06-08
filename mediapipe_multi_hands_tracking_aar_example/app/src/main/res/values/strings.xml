@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Mosibit</string>
+    <string name="fragment_home">Home</string>
+    <string name="fragment_translate">Translate</string>
+    <string name="alphabet_A">A</string>
+    <string name="img_description">Image</string>
+    <string name="mobile_sibi">Mobile SIBI Translation</string>
+    <string name="no_camera_access" translatable="false">Please grant camera permissions.</string>
+    <string name="no_hand_detected">......</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
