@@ -4,7 +4,7 @@
 # Workflow Android:
 ![android Diagram](https://user-images.githubusercontent.com/73755395/121027666-59959680-c7d1-11eb-929c-bd8d26dc3433.png)
 
-### Machine Learning Training and Prediction Model.
+### Native Android Application.
 #### Requirement
 For our training model, we were using:
 - Python 3.8.6
