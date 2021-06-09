@@ -16,7 +16,7 @@ For our training model, we were using:
 
 We suggest to using virtual environment to contain the needed module in case there's problem to them.
 
-![splash screen](https://user-images.githubusercontent.com/73755395/121031997-0f161900-c7d5-11eb-89ef-4ea9e6d8281b.png)|
+![splash screen](https://user-images.githubusercontent.com/73755395/121031997-0f161900-c7d5-11eb-89ef-4ea9e6d8281b.png)
 ![home](https://user-images.githubusercontent.com/73755395/121275995-04a07000-c8f8-11eb-9a64-97cbfb0210a1.jpeg)
 ![translate](https://user-images.githubusercontent.com/73755395/121036311-de37e300-c7d8-11eb-81f3-fa406f44ddeb.png)
 ![bug report](https://user-images.githubusercontent.com/73755395/121276024-0ff39b80-c8f8-11eb-8bc5-46654db67d6d.jpeg)
